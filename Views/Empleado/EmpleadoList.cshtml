@@ -1,0 +1,36 @@
+﻿@model List<CRUD_1.Context.VistaEmpleado>
+@{
+    ViewBag.Title = "EmpleadoList";
+}
+
+<h2>Listado Empleados</h2>
+
+<table class="table table-responsive">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Compañia</th>
+        <th>Acccion</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.nombre</td>
+                    <td>@item.apellido</td>
+                    <td>@item.telefono</td>
+                    <td>@item.direccion</td>
+                    <td>@item.Compañia</td>
+
+                    <td>
+                        <a href="@Url.Action("Empleado", new {item.idEmp, item.nombre,item.apellido,item.telefono,item.direccion,item.Compañia})" class="btn btn-success">Edit</a>
+                        <a href="@Url.Action("Delete",new {id=item.idEmp })" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            }
+</table>
+

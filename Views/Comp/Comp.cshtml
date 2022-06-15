@@ -1,0 +1,29 @@
+﻿@model CRUD_1.Context.comp
+@{
+    ViewBag.Title = "Comp";
+}
+
+<h2>Ingreso Compañia</h2>
+
+@using (Html.BeginForm("AddEmpleado", "Comp", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.idcomp)
+            <label>Nombre:</label>
+            @Html.ValidationMessageFor(x => x.nombre, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+        </div>
+
+     
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="reset" class="btn btn-danger">Cerrar</button>
+        </div>
+
+
+       
+    </div>
+
+}
+

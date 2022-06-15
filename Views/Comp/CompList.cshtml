@@ -1,0 +1,32 @@
+﻿@model List<CRUD_1.Context.comp>
+@{
+    ViewBag.Title = "CompList";
+}
+
+<h2>CompList</h2>
+
+
+<table class="table table-responsive">
+    <tr>
+        <th>Nombre</th>
+       
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.nombre</td>
+            
+
+            <td>
+                <a href="@Url.Action("Comp", new {item.idcomp, item.nombre})" class="btn btn-success">Edit</a>
+               <!----<a href="@Url.Action("Delete",new {id=item.idcomp })" class="btn btn-danger">Delete</a>-->
+
+            </td>
+        </tr>
+    }
+</table>
+
+
+
