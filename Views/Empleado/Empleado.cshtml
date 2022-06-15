@@ -46,7 +46,7 @@
         <div class="form-group">
             <label>Compañia:</label>
             @Html.ValidationMessageFor(x => x.idcomp, "", new { @class = "error" })
-            @Html.TextBoxFor(x => x.idcomp, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.idcomp,new {type="number", @class = "form-control"  } )
         </div>
 
         <div class="form-group">
@@ -65,4 +65,27 @@
     </div>
 
 }
+
+<script>
+        function solonumeros(e) {
+
+            var key;
+
+            if (window.event) // IE
+            {
+                key = e.keyCode;
+            }
+            else if (e.which) // Netscape/Firefox/Opera
+            {
+                key = e.which;
+            }
+
+            if (key < 48 || key > 57) {
+                return false;
+            }
+
+            return true;
+        }
+
+</script>
 
